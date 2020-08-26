@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoAPP</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <div>
+            <a href="/">ToDo APP</a>
+        </div>
+        <ul>
+            <% if !current_user.nil? %>
+                <li>Hello, <%= current_user.name %></li>
+                <li><a href="/signout">Signout</a></li>
+            <% else %>
+                <li>Are you a new user?</li>
+                <li><a href="/signin">Signin</a></li>
+                <li><a href="/signup">New Account</a></li>
+            <% end %>
+        </ul>
+        </div>
+    </nav>
+    <%= yield %>
+</body>
+</html>
