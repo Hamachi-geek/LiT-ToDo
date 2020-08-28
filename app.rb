@@ -76,7 +76,7 @@ post '/tasks/:id/done' do
     redirect '/'
 end
 
-post '/tasks/:id/star' do
+get '/tasks/:id/star' do
     task = Task.find(params[:id])
     task.star = !task.star
     task.save
